@@ -1,0 +1,14 @@
+<html>
+    <body>
+        <h1>node_practice</h1>
+        <script>
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "/api/user/list");
+            xhr.addEventListener("load", function(e) {
+                var users = JSON.parse(xhr.responseText);
+                console.log(users);
+            });
+            xhr.send();
+        </script>
+    </body>
+</html>

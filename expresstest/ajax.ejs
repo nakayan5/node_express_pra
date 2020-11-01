@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script>
+        $(function() {
+            $('#btn').click(function() {
+                $.ajax({
+                    type: 'POST',
+                    url: '/ajax',
+                    dataType: 'json',
+                    success: function(data) {
+                        $('#msg').html(data.msg)
+                    },
+                    error: function() {
+
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+<body>
+    <form action="/">
+        <div id="msg"></div>
+        <button id="btn" type="button">send</button>
+    </form>
+</body>
+</html>
